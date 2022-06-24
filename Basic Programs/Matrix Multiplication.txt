@@ -1,0 +1,6 @@
+for(int i=0;i<r;i++){
+for(int j=0;j<c;j++){
+mul[i][j]=0;
+for(int k=0;k<c;k++){
+mul[i][j] += a[i][k]*b[k][j];
+}}}

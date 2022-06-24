@@ -1,0 +1,16 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int count=10,flag=0;
+    int m=count/2;
+    for(int i=2;i<m;i++){
+        if(n%i==0){
+            cout<<"bfbrver";
+            flag=1;
+            break;
+        }
+    }
+    if(flag==0){
+        cout<<"Prime Number";
+    }
+}
