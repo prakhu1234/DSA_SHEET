@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+void gcd(p,q){
+if(p==0){
+return q;
+}
+if(q==0){
+return p;
+}
+if(p==q){
+return p;
+}
+if(p>q){
+return gcd(p-q,q);
+}
+else{
+return gcd(p,q-p);
+}
+int main(){
+int p=98,q=56;
+cout<<gcd(p,q);
+return 0;
+}
