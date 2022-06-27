@@ -1,0 +1,29 @@
+#N=5, S=12;
+#A[]={1,2,3,7,5};
+
+#include<bits/stdc++.h>
+using namespace std;\
+int main(){
+##only function;
+if(S==0){
+for(int i=0;i<N;i++){
+if(A[i]==0){
+return vector<int,int>{i,i};
+}}
+int l=0,r=0;
+int sum=0;
+while(l<N && r<=N &&l<=r){
+if(sum<s){
+sum+=arr[r];
+r++;
+}
+else if(sum>s){
+sum-=arr[l];
+l++;
+}
+else{
+return vector<int,int>{l+1,r};
+}
+}
+return 0;
+}
