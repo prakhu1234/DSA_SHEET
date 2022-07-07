@@ -1,0 +1,22 @@
+int findLongestConseqSubseq(int arr[], int N)
+    {
+      //Your code here
+      set<int>hashSet;
+      for(int num:arr){
+          hasSet.insert(num);
+      }
+      int longestStreak=0;
+      for(int num:arr){
+          if(!hashSet.count(num-1)){
+              int currNum=num;
+              int currstreak=1;
+              
+              while(hashSet.count(currNum+1)){
+                  currNum+=1;
+                  currStreak+=1;
+              }
+              longestStreak=max(currStreak,longestStreak);
+          }
+      }
+      return longestStreak;
+    }
