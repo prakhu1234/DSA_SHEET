@@ -1,0 +1,25 @@
+#By Iteration
+void reverse(node* &head){
+node* currptr=head;
+node* nextptr;
+node* prevptr=NULL;
+while(currptr!=NULL){
+nextptr=currptr->next;
+currptr->next=prevptr;
+prevptr=currptr;
+currptr=nextptr;
+}
+return prevptr;
+}
+
+
+#By Recursion
+void reverseLinked(node* &head){
+if(head==NULL || head->next==NULL){
+return head;
+}
+node* newHead=reverseLinked(head->next);
+head->next->next=head;
+head->next=NULL;
+return newHead;
+}

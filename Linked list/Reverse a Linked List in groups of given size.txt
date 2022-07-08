@@ -1,0 +1,41 @@
+struct node *reverse (struct node *head, int k)
+    { 
+        // Complete this method
+        struct node* currptr=head;
+        struct node* nextptr;
+        struct node* prevptr=NULL;
+        int c=0;
+        while(currptr!=NULL && c<k){//currptr jab tak null na hojaata aur count ki value k se jb tk km h
+            nextptr=currptr->next;
+            currptr->next=prevptr;
+            prevptr=currptr;
+            currptr=nextptr;
+            c++;//c m b wahi count add ho jayega
+        }
+        if(nextptr!=NULL){//nextptr m woh waale jo ki ek aage hoga
+            head->next=reverse(nextptr,k);
+        }
+        return prevptr;
+}
+
+
+//1,2,3,4,5,6,7,8  k=3
+pehle head hamara starting m 1 ko point krra hai
+aur ek phase ke baad
+3->2->1
+head ke next matlab 1 ke next ke aage judega
+        
+        //first phase
+        //head=1
+        //next=4
+        //prev=3
+        
+        //second phase
+        //head=4
+        //next=7
+        //prev=6
+        
+        //last phase
+        //head=7
+        //next=Null
+        //prev=8
