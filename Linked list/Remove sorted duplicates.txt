@@ -1,0 +1,18 @@
+void removesortedDuplicates(struct Node* head)
+{
+    struct Node* temp=head;
+    struct Node* next_next;
+    if(temp==NULL){
+        return;
+    }
+    while(temp->next!=NULL){
+        if(temp->data==temp->next->data){
+            next_next=temp->next->next;
+            free(temp->next);
+            temp->next=next_next;
+        }
+        else{
+            temp=temp->next;
+        }
+    }
+}
