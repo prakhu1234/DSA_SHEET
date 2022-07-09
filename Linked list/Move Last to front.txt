@@ -1,0 +1,13 @@
+void moveLastToFirst(node* &head){
+if(head==NULL || head->next==NULL){
+return;
+}
+node* secLast=NULL;
+node* Last=head;
+while(Last->next!=NULL){
+secLast=Last;
+Last=Last->next;
+}
+secLast->next=NULL;
+Last->next=head;
+head=Last;
