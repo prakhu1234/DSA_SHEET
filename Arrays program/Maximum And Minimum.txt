@@ -1,0 +1,18 @@
+void MaximumAndMinimum(int arr[],int n){
+int maxi=arr[0];
+int mini=arr[0];
+if(maxi>arr[1]){
+maxi=arr[1];
+}
+if(mini<arr[1]){
+mini=arr[1];
+}
+for(int i=2;i<n;i++){
+if(arr[i]>maxi){
+maxi=arr[i];
+}
+if(arr[i]<mini){
+mini=arr[i];
+}
+}
+}
