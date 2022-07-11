@@ -1,0 +1,42 @@
+node* reverseNodes(node* head){
+node* curr=head;
+node* prev=NULL;
+node* next;
+while(curr!=NULL && curr->next!=NULL){
+next=curr->next;
+curr->next=prev;
+prev=curr;
+curr=next;
+}
+return prev;
+}
+
+void addTwoLinked(node* head1,node* head2){
+head1=reverseNodes(head1);
+head2=reverseNodes(head2);
+int carry=0;
+int sum=0;
+node* temp;
+node* res=NULL;
+node* curr=NULL;
+while(head1!=NULL || head2!=NULL){
+sum=carry+(head1?head1->data:0)+(head2?head2->data:0);
+carry=sum>=10?1:0;
+sum=sum%10;
+temp=new node(sum);
+if(res==NULL){
+res=temp;
+}
+else{
+curr->next=temp;
+curr=temp;
+}
+}
+}
+if(carry>0{
+temp=new node(carry);
+curr->next=temp;
+curr=temp;
+}
+res=reverseNodes(res);
+return res;
