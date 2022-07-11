@@ -1,0 +1,9 @@
+void findkrdSmallest(int arr[],int n,int k){
+prority_queue<int>q;
+while(!q.empty){
+if(q.size()>k){
+q.pop();
+}
+}
+cout<<q.top();
+}
