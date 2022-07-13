@@ -1,0 +1,27 @@
+int shuffleString(string s1,strint s2,string res){
+int l1=s1.size();
+int l2=s2.size();
+int lr=res.size();
+if((l1+l2)!=lr) return 0;
+else{
+int f=0;
+int i=0;
+int j=0;
+int k=0;
+while(k<lr){
+if(i<l1 && l1[i]==res[i]){
+i++;
+}
+else if(j<l2 && l2[i]==res[i]){
+j++;
+}
+else{
+f=1;
+break;
+}}
+if(i<l1 || j<l2){
+return 0;
+}
+else{
+return 1;
+}
