@@ -1,0 +1,22 @@
+string countAndSay(int n) {
+        if(n==1) return "1";
+        if(n==2) return "11";
+        string s="11";//ye default hai string.
+        for(int i=3;i<=n;i++){
+            string t="";//ek take new string in which result is stored.
+            s=s+'$';//last m ek delimiter laga do.
+            int c=1;//counter
+            for(int j=1;j<s.size();j++){//is loop m check hoga aage peeche wale element barabar nhi hai.
+                if(s[j]!=s[j-1]){
+                    t=t+to_string(c);//isme pehle counter ki value string ke form mein store hogi.
+                    t=t+s[j-1];//phr element ki value aayegi t waali string mein
+                    c=1;//counter ko 1 kar denge.
+                }
+                else{//isme check hoga ki barabar hai.
+                    c++;//aur hai toh counter badha do.
+                } 
+            }
+            s=t;//aur isme string ko jo nayi bani woh daaldo aise karke string uodate hoti rhegi.
+        }
+        return s;
+}
