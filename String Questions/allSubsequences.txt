@@ -1,0 +1,9 @@
+allSubsequences(string t,int i,int n,string s){
+if(i==n){
+return t;
+}
+else{
+allSubsequences(t,i+1,n,s);
+t=t+s[i];
+allSubsequences(t,i+1,n,s);
+}
