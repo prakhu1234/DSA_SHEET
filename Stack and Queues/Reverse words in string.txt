@@ -1,0 +1,31 @@
+string reverseWords(string S) 
+    { 
+        // code here 
+     
+        string word="",str="";
+        stack<string>s;
+        for(int i=0;i<S.length();i++){
+            
+            if(S[i]!='.'){
+                word+=S[i];
+            }
+            if(i==S.length()-1){
+                s.push(word);
+            }
+            else{
+                if(S[i]=='.'){
+                    s.push(word);
+                    word="";
+                }
+            }
+            
+        }
+        while(!s.empty()){
+            str+=s.top();
+            str+='.';
+            s.pop();
+            
+        }
+        str.erase(str.begin() + str.length()-1);
+        return str;
+}
