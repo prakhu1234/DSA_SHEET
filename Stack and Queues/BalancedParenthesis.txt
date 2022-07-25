@@ -1,0 +1,58 @@
+bool ispar(string x1)
+    {
+        // Your code here
+        stack<char> s;
+        char x;
+ 
+        // Traversing the Expression
+        for (int i = 0; i < x1.length(); i++)
+        {
+        if (x1[i] == '(' || x1[i] == '['
+            || x1[i] == '{')
+        {
+            // Push the element in the stack
+            s.push(x1[i]);
+            continue;
+        }
+ 
+        // IF current current character is not opening
+        // bracket, then it must be closing. So stack
+        // cannot be empty at this point.
+        if (s.empty())
+            return false;
+ 
+        switch (x1[i]) {
+        case ')':
+             
+            // Store the top element in a
+            x = s.top();
+            s.pop();
+            if (x == '{' || x == '[')
+                return false;
+            break;
+ 
+        case '}':
+ 
+            // Store the top element in b
+            x = s.top();
+            s.pop();
+            if (x == '(' || x == '[')
+                return false;
+            break;
+ 
+        case ']':
+ 
+            // Store the top element in c
+            x = s.top();
+            s.pop();
+            if (x == '(' || x == '{')
+                return false;
+            break;
+        }
+    }
+    
+ 
+    // Check Empty Stack
+    return (s.empty());
+        
+    }
