@@ -1,0 +1,38 @@
+node* reverseLinked(node* head){
+node* prevptr=NULL;
+node* currptr=head;
+node* nextptr;
+while(currptr!=NULL){
+nextptr=currptr->next;
+currptr->next=prevptr;
+prevptr=currptr;
+currptr=nextptr;
+}
+return prevptr;
+}
+
+node* add1ToLinked(node* head){
+head=reverseLinked(head);
+node* temp=head;
+bool f=true;
+while(temp!=NULL && f==true){
+if(temp->next==NULL && temp->data==9){
+temp->data=1;
+node* temp1=new node(0);
+temp1->next=head;
+head=temp1;
+temp=temp->next;
+}
+else if(temp->data==9){
+temp->data=0;
+temp=temp->next;
+}
+else{
+temp-data=temp->data+1;
+temp=temp->next;
+f=false;
+}
+}
+head=reverseLinked(head);
+return head;
+}
